@@ -20,6 +20,7 @@ const Home: NextPage = () => {
       url: "/",
     },
   ];
+  
   const card: SideBarMenuCard = {
     id:'card_01',
     displayName: 'Juan Lechin',
@@ -27,6 +28,7 @@ const Home: NextPage = () => {
     photoUrl: '',
     url: "/"
   };
+
   return (
     <>
       <Head>
