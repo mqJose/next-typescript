@@ -5,7 +5,7 @@ import Footer from '../src/components/Footer'
 import SideBarMenu from '../src/components/SideBarMenu'
 import { SideBarMenuCard, SideBarMenuItem } from '../src/types/types'
 import { FcAdvertising, FcAcceptDatabase } from 'react-icons/fc'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
   const items: SideBarMenuItem[] = [{
@@ -20,12 +20,12 @@ const Home: NextPage = () => {
       url: "/",
     },
   ];
-  
+
   const card: SideBarMenuCard = {
     id:'card_01',
     displayName: 'Juan Lechin',
     title: 'Accountant',
-    photoUrl: '',
+    photoUrl: 'https://res.cloudinary.com/drqezhb6l/image/upload/v1623218040/christopher-campbell-rDEOVtE7vOs-unsplash_kzmlib.jpg',
     url: "/"
   };
 
