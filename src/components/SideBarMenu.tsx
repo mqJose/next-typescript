@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { SideBarMenuCard, SideBarMenuItem } from '../types/types'
 import { classNames } from '../utils/classes'
 import { VscMenu } from 'react-icons/vsc'
 import SideBarMenuCardView from './SideBarMenuCardView'
 import SideBarMenuItemView from './SideBarMenuItemView'
+
+import styles from '../../styles/Home.module.scss'
 
 interface SideBarMenuProps {
   items: SideBarMenuItem[];
@@ -14,16 +16,21 @@ const SideBarMenu = ({ items, card }: SideBarMenuProps) => {
   
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  }
+  useEffect(() => { 
+    console.log(isOpen)
+  }, [isOpen])
 
   return (
     <div
-      className={classNames('SideBarMenu', isOpen ? 'expanded' : 'collapsed')}
+      className={classNames(styles.SideBarMenu , isOpen ? styles.expanded : styles.collapsed)}
     >
-      <div className="menuButton">
-        <button className="hamburgerButton" onClick={handleClick}>
+      <div className={styles.menuButton}>
+        <button 
+          type="button"
+          className={styles.hamburguerIcon} 
+          onClick={() => {
+            setIsOpen(!isOpen)
+          }}>
           <VscMenu />
         </button>
       </div>
